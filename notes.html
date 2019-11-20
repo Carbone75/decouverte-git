@@ -1,0 +1,142 @@
+http://formation.webdevpro.net/git.pdf
+
+-------------------
+
+vérifier que git est bien installé sur votre ordinateur
+
+git --version
+
+// installation de git sur Linux
+sudo apt-get install git
+
+git config --global user.name "Malik H"
+git config --global user.email "malik.h@webdevpro.net"
+
+le profil est défini par SESSION par ordinateur
+les doubles quotes sont facultatives si il y a un mot unique
+les doubles quotes sont obligatoires s'il y a un espace dans le nom / email
+
+=> ces deux commandes sont OBLIGATOIRES = dire qui a fait quoi où ?
+
+git config -l
+
+
+---------------------
+
+
+Nous allons voir d'abord les commandes de base de git qui sont parfaites lorsque l'on travaille seul
+12 - 80
+
+Lorsque l'on arrive à la dipositive 81 => travailler à plusieurs
+Github
+
+
+-----------------------
+aller dans le bureau et créer un dossier git
+attention !!!!!!!!!!!!!!!!
+
+les commandes doivent être exécutées dans le dossier git
+attention au path
+les commandes sont dites locales => dans un dossier particulier de l'OS
+
+-------------------------
+git init
+
+fait la commande
+=> créer un dépot = repository
+=> si vous regardez dans le dossier git => un nouveau dossier qui vient d'être créé .git
+=> jeter un coup d'oeil = ne jamais faire de manipulation directement sur les dossiers / fichiers dans ce dossier .git
+=> c'est dans de dossier que git va stocker les différentes versions de votre travail
+=> si vous avez un fichier ou un dossier qui a juste nom qui comporte juste une extension
+.git => git (dossier)
+.htaccess (fichier)
+.htpasswd (fichier)
+=> dossier / fichier caché
+
+les voir => ls -al
+
+=> Obligatoire pour lancer un projet en local
+
+1 créer le dossier du projet /
+2 lancer un terminal dans le dossier
+3 et faire un git init
+
+-------------------------
+
+git status = vérifier l'écart entre le dépôt et votre dossier de travail
+
+=> tout va bien !
+=> attention il y a des écarts entre le dépot et votre dossier de travail
+
+-------------------------
+
+dans le dossier git créer le fichier index.html
+et saisir un peu de html dans ce fichier
+
+-------------------------
+
+git add index.html => lancer le suivi de toutes activités dans le fichier index.html
+à partir de maintenant le fichier index.html va être suivi par git
+copie du fichier index.html dans .git
+
+mais il vous reste la validation
+
+-------------------------
+
+pour valider l'enregistrement dans le repository
+
+git commit -m "premier commit"
+git commit -m"ajout de la balise h1 dans index"
+git commit
+
+=> attention cette commande a plusieurs variantes
+=> si vous avez réaliser une modification dans un fichier qui a été ajoutée
+vous devez hélas saisir git add index.html puis faire un commit
+
+saisir votre description
+Ctrl + O Ecrire
+Enter => valider
+Ctrl + X => eXit
+
+-------------------------
+
+Est ce qu'il faut faire des add en permance => OUI
+=> copie dans le repository
+
+Puis il doit être suivi d'un commit
+=> valider la copie
+
+git add *
+git commit -m "message"
+
+git commit -a -m "message"
+
+---------------------
+
+modifier le fichier index.html
+dans le terminal
+git add index.html
+git commit -m "modification style"
+
+---------------------
+
+git diff <nom_fichier> => permet d'avoir en détails les différences entre le repository et le fichier modifié
+
+    git diff est une version plus détaillée que git status
+
+    ---------------------
+
+
+    git log <nom_fichier>
+
+        permet de voir l'ensemble des modifications sur tous ou un fichier particulier
+        liste des commit
+        pour se déplacer dans ce menu utiliser les flêches directionnelles haut et bas
+        pour sortir (récupérer le prompt ) => q (quit)
+
+        ---------------------
+
+        gitk
+        installer gitk sur Linux sudo apt install gitk
+
+        git log --oneline -p index.html
